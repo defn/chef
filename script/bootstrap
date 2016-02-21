@@ -14,7 +14,7 @@ function bootstrap {
     Linux)
       local fnm_chef="chefdk_0.10.0-1_amd64.deb"
       local url_chef='https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.10.0-1_amd64.deb'
-      cache curl -o "$fnm_chef" "$url_chef" -sS -L
+      cache curl "$fnm_chef" "$url_chef" -sS -L
       sudo dpkg -i ./"$fnm_chef"
       ;;
   esac
