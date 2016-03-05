@@ -7,14 +7,14 @@ function bootstrap {
 
   case "$(uname -s)" in
     Darwin)
-      app compile dmg \
+      block compile dmg \
         'https://opscode-omnibus-packages.s3.amazonaws.com/mac_os_x/10.11/x86_64/chefdk-0.10.0-1.dmg' \
         'Chef Development Kit' 'chefdk-0.10.0-1.pkg'
       ;;
     Linux)
       local fnm_chef="chefdk_0.10.0-1_amd64.deb"
       local url_chef='https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.10.0-1_amd64.deb'
-      cache curl "$fnm_chef" "$url_chef" -sS -L
+      cache curl "$fnm_chef" "$url_chef"
       sudo dpkg -i "${BASEBOX_CACHE}/curl/$fnm_chef"
       ;;
   esac
