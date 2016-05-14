@@ -7,8 +7,9 @@ function bootstrap {
 
   case "$(uname -s)" in
     Darwin)
+      local ver_osx="$(w_vers -productVersion | cut -d. -f1-2)"
       block compile dmg \
-        'https://packages.chef.io/stable/mac_os_x/10.11/chefdk-0.13.21-1.dmg' \
+        "https://packages.chef.io/stable/mac_os_x/${ver_osx}/chefdk-0.13.21-1.dmg" \
         'Chef Development Kit' 'chefdk-0.13.21-1.pkg'
       ;;
     Linux)
