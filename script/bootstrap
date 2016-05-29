@@ -9,12 +9,12 @@ function bootstrap {
     Darwin)
       local ver_osx="$(sw_vers -productVersion | cut -d. -f1-2)"
       block compile dmg \
-        "https://packages.chef.io/stable/mac_os_x/${ver_osx}/chefdk-0.13.21-1.dmg" \
-        'Chef Development Kit' 'chefdk-0.13.21-1.pkg'
+        "https://packages.chef.io/stable/mac_os_x/${ver_osx}/chefdk-0.14.25-1.dmg" \
+        'Chef Development Kit' 'chefdk-0.14.25-1.pkg'
       ;;
     Linux)
-      local fnm_chef="chefdk_0.13.21-1_amd64.deb"
-      local url_chef='https://packages.chef.io/stable/ubuntu/12.04/chefdk_0.13.21-1_amd64.deb'
+      local fnm_chef="chefdk_0.14.25-1_amd64.deb"
+      local url_chef='https://packages.chef.io/stable/ubuntu/12.04/chefdk_0.14.25-1_amd64.deb'
       cache curl "$fnm_chef" "$url_chef"
       sudo dpkg -i "${BASEBOX_CACHE}/curl/$fnm_chef"
       ;;
